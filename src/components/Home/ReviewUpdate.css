@@ -1,0 +1,21 @@
+.subject-detail{
+    padding: 15px 7px 8px 7px;
+}
+
+.review-update-container{
+    padding-top:8vh;
+    background-color: #f0efed;
+    scroll-behavior: smooth;
+    padding-bottom: 8vh;
+    color: #333;
+    padding-bottom:170px;
+}
+
+.review-update-title{
+ text-align: center;
+margin-top: 20px;
+}
+
+.button{
+width: 40%;
+}

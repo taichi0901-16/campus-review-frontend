@@ -1,0 +1,41 @@
+.period-selector-container {
+    background-color: #f0efed;
+
+    margin:40px 10px;
+}
+  
+  .period-selector-header {
+    background-color: #364e8b;
+    color: white;               /* 文字色を白に */
+      padding: 15px 20px;         /* 上下左右に余白を追加 */
+      font-size: 20px;            /* フォントサイズを大きく */
+      text-align: center;         /* 中央寄せ */
+      border-radius: 5px;         /* 角を丸くする */
+      margin-bottom:10px;
+    }
+  
+  .period-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .period-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .period-option:hover {
+    background-color: #e0e0e0;
+
+}

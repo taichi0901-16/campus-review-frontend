@@ -1,0 +1,138 @@
+.postform-container{
+  padding-top:8vh;
+  background-color: #f0efed;
+  scroll-behavior: smooth;
+  padding-bottom: 8vh;
+  color: #333;
+  padding-bottom:170px;
+}
+
+.postform-title{
+  text-align: center;
+  margin:10px 0px;
+}
+
+  
+.subject-selector-container{
+  background-color: white;
+  margin:40px 10px;
+  padding-bottom:10px;
+  border-radius: 5px;    
+}
+
+.subject-selector {
+  margin-bottom: 20px;
+  margin:15px 10px 7px 10px;
+}
+
+.selector-header  {
+  background-color: #364e8b;
+  color: white;               /* 文字色を白に */
+  padding: 15px 20px;         /* 上下左右に余白を追加 */
+  font-size: 20px;            /* フォントサイズを大きく */
+  text-align: center;         /* 中央寄せ */
+  border-radius: 5px;         /* 角を丸くする */
+}
+
+.comment-header {
+  background-color: #364e8b;
+  color: white;               /* 文字色を白に */
+  padding: 15px 20px;         /* 上下左右に余白を追加 */
+  font-size: 20px;            /* フォントサイズを大きく */
+  text-align: center;         /* 中央寄せ */
+  border-radius: 5px;      
+}
+
+.rating-header{
+  background-color: #364e8b;
+  color: white;               /* 文字色を白に */
+  padding: 15px 20px;         /* 上下左右に余白を追加 */
+  font-size: 20px;            /* フォントサイズを大きく */
+  text-align: center;         /* 中央寄せ */
+  border-radius: 5px;     
+}
+
+.comment-container {
+  background-color: white;
+  margin:40px 10px;
+  border-radius: 5px;  
+  height:18vh
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  height:12vh;
+  margin: auto;
+}
+
+.comment-textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.checkbox-button{
+  margin-top: 5px;
+}
+
+/* postform.css に追加できる */
+.star-rating span:hover {
+  color: #ffbf00;
+}
+
+
+.rating-container{
+margin-top: 30px;
+background-color: white;
+margin:40px 10px;
+border-radius: 4px;
+
+}
+
+.rating{
+  margin-top:5px;
+  padding-left:1.5vh;
+margin-bottom: 10px;
+}
+
+.tags-selector{
+  margin-top:7px;
+}
+
+.registerclasses{
+  text-align: right;
+  padding-right: 18px;
+  margin-top:0;
+  color: blue;
+}
+
+.bottom-nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.button{
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #364e8b;
+  margin:15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+}

@@ -1,0 +1,82 @@
+.update-container {
+    padding:8vh 30px;
+    background-color: whitesmoke;
+    scroll-behavior: smooth;
+    color: #333;
+    padding-bottom:170px;
+    width:100%;
+  }
+  
+  .update-container h2 {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #364e8b;
+  }
+  
+  .update-container form > div {
+    margin-bottom: 20px;
+  }
+  
+  .update-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .update-container input,
+  .update-container select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .update-container input:focus,
+  .update-container select:focus {
+    border-color: #364e8b;
+    outline: none;
+  }
+  
+  .update-container button {
+    padding: 10px 16px;
+    background-color: #364e8b;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+     display: block;
+  }
+  
+  .update-container button:hover {
+    background-color: #2c3f6b;
+  }
+  
+  .update-container .add-section {
+    margin-top: 10px;
+    background-color: #f7f9fc;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .update-container p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .update-button{
+margin: auto;
+width:70%;
+text-align: center;
+  }

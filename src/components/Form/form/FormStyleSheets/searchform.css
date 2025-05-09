@@ -1,0 +1,117 @@
+.searchform-container{
+  padding-top:8vh;
+  background-color: #f0efed;
+  scroll-behavior: smooth;
+  padding-bottom: 8vh;
+  color: #333;
+  padding-bottom:170px;
+}
+
+
+.question{
+  margin:20px 10px;
+
+}
+.checkbox-button {
+    display: inline-block;
+    margin: 3px;
+    padding: 7px 12px;
+    border: 2px solid #364e8b;
+    border-radius: 20px;
+    background-color: white;
+    color: #364e8b;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+  }
+  
+  .checkbox-button.selected {
+    background-color:#364e8b;
+    color: white;
+  }
+  
+  .checkbox-button input {
+    display: none;
+  }
+
+
+  
+  .subject-selector-container{
+    background-color: white;
+    margin:40px 10px;
+    padding-bottom:10px;
+    border-radius: 5px;    
+  }
+
+  .subject-selector {
+    margin-bottom: 20px;
+    margin:15px 10px 7px 10px;
+  }
+  
+  .selector-header {
+    background-color: #364e8b;
+    color: white;               /* 文字色を白に */
+    padding: 15px 20px;         /* 上下左右に余白を追加 */
+    font-size: 20px;            /* フォントサイズを大きく */
+    text-align: center;         /* 中央寄せ */
+    border-radius: 5px;         /* 角を丸くする */
+  }
+
+    
+  .subject-selector select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .freeword-container {
+    background-color: white;
+    margin:40px 10px;
+    padding:10px;
+    border-radius: 5px;  
+  }
+  
+  .freeword-textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top:5px;
+  }
+  
+  .freeword-textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  }
+  
+
+  .bottom-nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+  }
+
+  .button{
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #364e8b;
+    margin:15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+  }

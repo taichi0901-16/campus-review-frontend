@@ -1,0 +1,103 @@
+body{
+  background-color: #f0efed;
+
+}
+
+.review-info {
+  padding-top:9vh;
+  padding-right:2vh;
+  padding-left:2vh;
+  background-color: #f0efed;
+  scroll-behavior: smooth;
+  color: #333;
+height:100%;
+
+}
+
+.review-info__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.review-info__stat {
+  margin: 0.25rem 0;
+}
+
+.review-info__subtitle {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.review-info__list {
+  margin-top: 1rem;
+}
+
+.review-card {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #f9f9f9;
+  position: relative;
+  border-radius: 5px; /* もしくは 0 にして完全に角ばらせる */
+}
+
+.review-card__item {
+  margin: 0.5rem 0;
+}
+
+
+
+.review-card__menu-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.review-card__dropdown {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 10;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-card__dropdown-link,
+.review-card__dropdown-delete,
+.review-card__dropdown-cancel {
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.rating-star{
+color:sandybrown;
+font-size: 20px;
+}
+
+.rating-title{
+  color: #333;
+
+}
+
+.review-info-detail{
+  background-color: #f0efed;
+padding:10px;
+margin:5px;
+}
+
+.tag{
+  margin:0px 4px;
+}
+
+.review-card-link {
+  text-decoration: none;
+  color: inherit;
+}

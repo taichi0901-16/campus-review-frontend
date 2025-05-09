@@ -1,0 +1,48 @@
+/* termSelector.css */
+.term-options-wrapper{
+    background-color: #f0efed;
+  
+    margin:40px 10px;
+  }
+  /* "開講年から探す" のセクションスタイル */
+  .term-header {
+    background-color: #364e8b;
+    color: white;               /* 文字色を白に */
+      padding: 15px 20px;         /* 上下左右に余白を追加 */
+      font-size: 20px;            /* フォントサイズを大きく */
+      text-align: center;         /* 中央寄せ */
+      border-radius: 5px;         /* 角を丸くする */
+    }
+    
+    /* その他のtermSelectorのスタイルはそのまま */
+    .term-options {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      width: 100%;
+  
+  }
+    
+    .term-option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    
+    .selected {
+      background-color: #007bff;
+      color: white;
+    }
+    
+    .term-option:hover {
+      background-color: #e0e0e0;
+    }
+    

@@ -1,0 +1,122 @@
+/* reviews コンテナ */
+.reviews {
+    padding: 0px 0px 0px 20px;
+  }
+  .new-reviews-subject{
+    margin:0px 0px 15px 0px;
+  }
+  /* search-results-container: 横スクロールコンテナ */
+  .search-results-container {
+    overflow-x: auto;
+    white-space: nowrap;  /* 横に並べる */
+    padding-bottom: 20px;
+  }
+  
+  /* スクロール用のラッパー */
+  .scroll-wrapper {
+    display: flex;
+    gap: 20px;  /* カード間の隙間 */
+  }
+  
+  /* 個々のカード */
+  .course-card {
+    width: 35vh;  /* 正方形のカードの幅 */
+    height: 100%;  /* 正方形のカードの高さ */
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color:#fcfbf7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    overflow: hidden;  /* カード内に収める */
+    position: relative;
+  }
+  
+  /* カードタイトル */
+  .course-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0px 5px 10px;
+    white-space: nowrap;  /* テキストがはみ出ないようにする */
+    /* overflow: hidden; */
+    text-overflow: ellipsis;  /* 長いテキストを省略 */
+    text-align: left;
+  }
+  
+
+
+  /* レビュー情報 */
+  .review {
+  background-color: #f0efed;
+    font-size: 15px;
+    color: #666;
+    white-space: nowrap;  /* テキストがはみ出ないようにする */
+    overflow: hidden;
+    text-overflow: ellipsis;  /* 長いテキストを省略 */
+    height:54%;
+  }
+  
+  /* なしのレビュー */
+  .no-review {
+    font-size: 15px;
+    color: #999;
+    text-align: center;
+  }
+  
+  /* Linkのデフォルトの下線を消す */
+  a {
+    text-decoration: none;
+  }
+  
+.star{
+  display: inline;
+}
+
+.rate{
+  margin-right:5px;
+}
+
+.ratenum{
+  margin-left:5px;
+}
+
+.course_info{
+  text-align: left;
+  margin: 0px 0px 14px 15px;
+}
+
+.tags{
+  margin-top:10px;
+}
+
+.reviewinfo{
+  padding:5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  background-color:#0077cc ;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px; /* 丸くする */
+  font-size: 8px;
+  font-weight: 500;
+  cursor: default;
+  border: 1px solid #0077cc;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.tag:hover {
+  background-color: #cce8ff;
+}

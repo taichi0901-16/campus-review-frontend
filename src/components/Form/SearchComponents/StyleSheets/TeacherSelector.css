@@ -1,0 +1,46 @@
+/* コンテナのスタイル */
+.teacher-selector-container {
+    background-color: white;
+    margin:40px 10px;
+    padding-bottom:10px;
+    border-radius: 5px;         /* 角を丸くする */
+
+  }
+  
+  /* ヘッダーのスタイル */
+  .teacher-selector-header {
+    background-color: #364e8b;
+    color: white;               /* 文字色を白に */
+    padding: 15px 20px;         /* 上下左右に余白を追加 */
+    font-size: 20px;            /* フォントサイズを大きく */
+    text-align: center;         /* 中央寄せ */
+    border-radius: 5px;  
+  }
+  
+  /* セレクトボックスのラッパー */
+  .teacher-select-box {
+    display: flex;
+    justify-content: center;
+    margin:17px 10px 10px 10px;
+  }
+  
+  /* セレクトボックスのスタイル */
+  .teacher-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* セレクトボックスのホバー時のスタイル */
+  .teacher-select:hover {
+    border-color: #3f51b5;
+  }
+  
+  /* セレクトボックスが選択されたときのスタイル */
+  .teacher-select:focus {
+    border-color: #3f51b5;
+    outline: none;
+  }
+  

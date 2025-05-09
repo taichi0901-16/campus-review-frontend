@@ -1,0 +1,68 @@
+.review-details{
+  padding-top:9vh;
+  padding-right:2vh;
+  padding-left:2vh;
+  background-color: #f0efed;
+  scroll-behavior: smooth;
+  color: #333;
+height:100%;
+}
+
+.rating-title{
+  margin-top: 4vh;
+}
+
+.review-details__course-title{
+  margin-top:1vh;
+}
+
+.review-details__review-heading{
+  margin:2vh;
+}
+
+.reviewDetail{
+  background-color: white;
+  padding:2vh;
+  border-radius: 5px;
+}
+
+.review-details__rating{
+margin-bottom:5px;
+}
+
+.comment{
+  padding:1vh;
+}
+
+.tags-details{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag-detail{
+  background-color:#0077cc ;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px; /* 丸くする */
+  font-size: 8px;
+  font-weight: 500;
+  cursor: default;
+  border: 1px solid #0077cc;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin:3px;
+}
+
+
+
+.review-details__user-info{
+  text-align: right;
+}
+
+.review-card__menu-container {
+  position: absolute;
+  right: 1rem;
+  margin-right: 10px;
+}

@@ -1,0 +1,26 @@
+.auth-buttons {
+margin:5% 25%;
+justify-content: space-around;
+
+  }
+  a {
+    text-decoration: none;  /* 下線を消す */
+    color: inherit;         /* 親要素の色に合わせる */
+  }
+  
+  .auth-button {
+    padding: 10px 20px;
+    background-color: #364e8b;
+    margin:15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-button:hover {
+    background-color: slategrey;
+  }
+  

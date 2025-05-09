@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth;
+
+  }
+  
+
+  body{
+    height:100%;
+    background-color: #f0efed;
+
+  }

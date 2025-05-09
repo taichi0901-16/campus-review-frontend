@@ -1,0 +1,92 @@
+.mypage-details {
+    margin-top:8vh;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mypage-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    color: #333;
+  }
+
+  .mypage-email {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .mypage-info {
+    margin: 1.5rem 0rem;
+  }
+  
+  .mypage-item {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .mypage-link {
+    padding: 0.6rem 1rem;
+    background-color: #364e8b;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: right;
+  }
+  
+  .mypage-link:hover {
+    background-color: #0056b3;
+  }
+  
+  .mypage-loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #999;
+  }
+  
+/* 
+  .review-cards-container {
+    gap: 20px;
+  }
+   */
+  .review-card {
+    margin:10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    width:auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-name {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #2c3e50;
+  }
+  
+  .review-content {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .my-tags{
+    margin-top:5px;
+  }
+
+  .update-myreview{
+    display: inline-block;
+   
+  }
+
+  h3{
+    margin:20px;
+  }
+
+  .none-review{
+    text-align: center;
+  }
