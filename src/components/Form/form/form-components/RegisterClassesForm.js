@@ -89,7 +89,7 @@ fetchFaculties()
     setFormData({ ...formData,  [e.target.name] : faculty_id });
     if (faculty_id) {
       try {
-        const res = await axios.get(`http://localhost:5000/departments/${faculty_id}`);
+        const res = await axios.get(`${API_URL}/departments/${faculty_id}`);
         setDepartments(res.data);
       } catch (err) {
         console.error(err);
@@ -106,7 +106,7 @@ fetchFaculties()
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/registerclasses', formData);
+      const res = await axios.post(`${API_URL}/registerclasses`, formData);
       setMessage('登録成功！');
       setError('');
       setFormData({
@@ -143,13 +143,7 @@ fetchFaculties()
   const handleAddNewTeacher = async() => {
     setIsAddNewTeacher(true);
    
-    //   try {
-    //     const res = await axios.get(`http://localhost:5000/teachers`);
-    //     setTeachers(res.data);
-    //   } catch (err) {
-    //     console.error("教員情報の取得に失敗しました", err);
 
-    // };
   };
 
   const handleAddNewItem = async (type, value) => {
@@ -169,13 +163,13 @@ fetchFaculties()
     
 
   try {
-    const res = await axios.post(`http://localhost:5000/register/${type}`, payload);
+    const res = await axios.post(`${API_URL}/register/${type}`, payload);
     if (type === 'faculties') {
       setFaculties([...faculties, res.data]);
     } else if (type === 'departments') {
       setDepartments([...departments, res.data]);
     } else if(type === 'teachers'){
-      const teacherRes = await axios.get(`http://localhost:5000/teachers`);
+      const teacherRes = await axios.get(`${API_URL}/teachers`);
       setTeachers(teacherRes.data);
     }
     setMessage(`追加成功！`);
