@@ -204,7 +204,7 @@ function ReviewDetails() {
                   </div>
 
                   <div className="review-details__user-info">
-                    <p className="review-details__faculty-name">{userData.faculty_name} {userData.department_name} {user.grade_year}年</p>
+                    <p className="review-details__faculty-name">{userData[1]} {userData[0]} {user[7]}年</p>
                   </div>
                 </div>
                 </div>
