@@ -142,6 +142,7 @@ const handleSubmit = async (e) => {
   } catch (err) {
     setError(`大学の追加に失敗しました。`);
     setMessage('');
+    console.log("エラー" , err)
     console.error(err);
   }
   };
