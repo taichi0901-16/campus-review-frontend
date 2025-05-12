@@ -33,9 +33,6 @@ function ReviewEditForm() {
         setReviewDetails(res.data);
         const defaultValues = {
           ...res.data,
-          rating_overall: Number(res.data.rating_overall),
-          rating_easiness: Number(res.data.rating_easiness),
-          rating_usefulness: Number(res.data.rating_usefulness),
           selected_features: res.data.feature_ids.split(","),
           selected_class_styles: res.data.class_style_ids.split(","),
           selected_evaluation_methods: res.data.evaluation_method_ids.split(","),
