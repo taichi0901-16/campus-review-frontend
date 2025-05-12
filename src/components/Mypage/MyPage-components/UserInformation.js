@@ -74,8 +74,10 @@ console.log(response)
             placeholder="パスワード"
           />
           <br />
-          <button className="delete-btn" onClick={handleDelete}>削除実行</button>
-          <button onClick={() => setShowModal(false)}>キャンセル</button>
+          
+        <button className="delete-btn" onClick={handleDelete}>削除実行</button>
+<button className="modal-cancel-btn" onClick={() => setShowModal(false)}>キャンセル</button>
+
         </div>
       </div>
     )}
