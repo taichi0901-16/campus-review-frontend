@@ -29,7 +29,7 @@ function ReviewEditForm() {
       try {
         const res = await axios.get(`${API_URL}/plane_review/${id}`);
         setReviewDetails(res.data);
-        console.log(res.data)
+        console.log("レスポンスデータだよーーんレスポンスデータだよーーん",res.data)
         const defaultValues = {
           ...res.data,
           selected_features: res.data.feature_ids.split(","),
