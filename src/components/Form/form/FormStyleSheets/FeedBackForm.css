@@ -20,6 +20,9 @@
   margin-bottom: 10px;
 }
 
+.sub-message{
+    margin: 15px;
+}
 .text-area textarea {
   width: 100%;
   min-height: 120px;

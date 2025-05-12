@@ -47,8 +47,13 @@ function FeedBackForm({ onLogin }) {
           </div>
           <div className="text-area">
             <div className="message">
-              追加してほしい機能や改善点などございましたら、ご記入ください。
-              今後の運用の参考にさせていただきます。
+              <p>追加してほしい機能や改善点などございましたら、ご記入ください。
+              今後の運用の参考にさせていただきます。</p><br/>
+              <div className="sub-message">
+              <h3>今後実装予定の機能</h3>
+              <p>・各レビューのブックマーク機能</p>
+              <p>・レビューの評価順、投稿順での並び替え機能</p>
+              </div>
             </div>
             <textarea
               value={comment}
