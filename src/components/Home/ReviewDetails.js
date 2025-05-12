@@ -109,7 +109,7 @@ function ReviewDetails() {
             <div key={r.review_id} className="review-details__review-entry">
               <h3 className="review-details__review-heading">レビュー</h3>
 
-              {currentUser?.id === r.user_id && (
+              {/* {currentUser?.id === r.user_id && (
                 <div className="review-card__menu-container">
                   <button
                     className="review-card__menu-button"
@@ -137,7 +137,7 @@ function ReviewDetails() {
                     </div>
                   )}
                 </div>
-              )}
+              )} */}
 
               <div className="reviewDetail">
                 <p className="review-details__rating">面白さ: {renderStars(r.rating_overall)} {r.rating_overall}</p>

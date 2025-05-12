@@ -8,6 +8,7 @@ import RegisterForm from "./components/Form/form/form-components/RegisterForm";
 import PostForm from "./components/Form/form/form-components/PostForm"
 import RegisterClassesForm from "./components/Form/form/form-components/RegisterClassesForm";
 import SearchForm from "./components/Form/form/form-components/SearchForm";
+import FeedBackForm from "./components/Form/form/form-components/FeedBackForm";
 
 import FooterNav from "./components/Navbar/FooterNav";
 
@@ -102,6 +103,7 @@ function App() {
         <Route path="/user_delete" element={<UserDelete />} />
         <Route path="/reviews_by_ids" element={<ReviewsByIds />} />
         <Route path="/review_details/:review_id" element={<ReviewDetails />} />
+        <Route path="/feedback" element={<FeedBackForm onLogin={(user) => {setIsLoggedIn(true);setCurrentUser(user);}} />} />
 
 
 

@@ -1,0 +1,54 @@
+.feedback-form-container {
+    padding:9vh 12px;
+    background-color: #f0efed;
+    scroll-behavior: smooth;
+    padding-bottom: 8vh;
+    color: #333;
+    padding-bottom:170px;
+}
+
+.feed-back-header h2 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #364e8b;
+    text-align: center;
+}
+
+.text-area .message {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.text-area textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  transition: border 0.3s ease;
+}
+
+.text-area textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.feedback-button{
+padding: 12px;
+    font-size: 16px;
+    background-color: #364e8b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #2563eb;
+}
