@@ -32,13 +32,13 @@ function ReviewEditForm() {
         console.log("レスポンスデータだよーーんレスポンスデータだよーーん",res.data)
         const defaultValues = {
           ...res.data,
-          selected_features: res.data.feature_ids.split(","),
-          selected_class_styles: res.data.class_style_ids.split(","),
-          selected_evaluation_methods: res.data.evaluation_method_ids.split(","),
-          selected_material_provisions: res.data.material_provision_ids.split(","),
-          selected_requirements: res.data.requirement_ids.split(","),
-          selected_tags: res.data.tag_ids.split(","),
-          selected_teacher_styles: res.data.teacher_style_ids.split(","),
+          selected_features: res.data[7].split(","),
+          selected_class_styles: res.data[8].split(","),
+          selected_evaluation_methods: res.data[9].split(","),
+          selected_material_provisions: res.data[10].split(","),
+          selected_requirements: res.data[11].split(","),
+          selected_tags: res.data[12].split(","),
+          selected_teacher_styles: res.data[13].split(","),
         };
   
         reset(defaultValues); // ← これで初期チェックも含め反映される
