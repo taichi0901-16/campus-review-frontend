@@ -75,7 +75,6 @@ function LoginForm({ onLogin }) {
             </button>
           </div>
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          {loading && <p>🔄 ログイン処理中です...</p>} {/* ローディング中のメッセージ */}
         </div>
       </form>
       <div className="register-user">
