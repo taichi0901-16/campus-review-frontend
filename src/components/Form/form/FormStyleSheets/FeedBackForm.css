@@ -49,6 +49,6 @@ padding: 12px;
     text-align: center;
 }
 
-button[type="submit"]:hover {
+.feedback-button:hover {
   background-color: #2563eb;
 }
