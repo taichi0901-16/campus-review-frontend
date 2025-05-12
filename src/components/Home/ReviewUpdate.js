@@ -16,7 +16,9 @@ function ReviewEditForm() {
   const [reviewDetails, setReviewDetails] = useState(null);
   const [coursesDetails, setCoursesDetails] = useState([]);
   const { register, handleSubmit, watch, setValue, control, reset } = useForm({
-    defaultValues: {} // 最初は空
+    defaultValues: {}, // 最初は空
+    shouldUnregister: true, // ★追加
+
   });
   
   useEffect(() => {
