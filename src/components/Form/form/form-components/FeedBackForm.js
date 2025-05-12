@@ -63,7 +63,9 @@ function FeedBackForm({ onLogin }) {
               required
             />
           </div>
-            <button type="submit" className="feedback-button">送信</button>
+          <div className="feedback-button">
+            <button type="submit" className="w-full h-full">送信</button>
+          </div>
         </form>
       ) : (
         <div className="mypage-login">
