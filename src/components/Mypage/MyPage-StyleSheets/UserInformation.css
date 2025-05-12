@@ -101,6 +101,13 @@
   background-color: #c0392b;
 }
 
+.modal-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* ボタン間のスペース */
+  flex-wrap: wrap;
+}
+
 .modal-cancel-btn {
   padding: 10px 16px;
   font-size: 1rem;
