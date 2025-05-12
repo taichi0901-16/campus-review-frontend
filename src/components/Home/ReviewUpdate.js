@@ -31,7 +31,6 @@ function ReviewEditForm() {
       try {
         const res = await axios.get(`${API_URL}/plane_review/${id}`);
         setReviewDetails(res.data);
-        console.log("grtghyrughrtiughrliugvhrgilfj",res.data)
         const defaultValues = {
           ...res.data,
           selected_features: res.data.feature_ids.split(","),
@@ -80,6 +79,7 @@ function ReviewEditForm() {
       console.error("更新に失敗しました", err);
     }
   };
+  console.log(reviewDetails)
 
   if (!currentUser) return <p>ログインしてください</p>;
   if (!reviewDetails) return <p>読み込み中...</p>;
