@@ -16,8 +16,7 @@ function ReviewEditForm() {
   const [reviewDetails, setReviewDetails] = useState(null);
   const [coursesDetails, setCoursesDetails] = useState([]);
   const { register, handleSubmit, watch, setValue, control, reset } = useForm({
-    defaultValues: {}, // 最初は空
-
+    defaultValues: {} // 最初は空
   });
   
   useEffect(() => {
@@ -30,7 +29,7 @@ function ReviewEditForm() {
       try {
         const res = await axios.get(`${API_URL}/plane_review/${id}`);
         setReviewDetails(res.data);
-        console.log("プレーンデータ",res.data)
+        console.log(res.data)
         const defaultValues = {
           ...res.data,
           selected_features: res.data.feature_ids.split(","),
@@ -79,7 +78,6 @@ function ReviewEditForm() {
       console.error("更新に失敗しました", err);
     }
   };
-  console.log(reviewDetails)
 
   if (!currentUser) return <p>ログインしてください</p>;
   if (!reviewDetails) return <p>読み込み中...</p>;
