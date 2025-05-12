@@ -129,7 +129,7 @@ function ReviewDetails() {
 
             <div className="review-details__review-list">
               {course.reviews.map((r, i) => (
-                <div key={i} className="review-details__review-entry">
+                <div key={r.review_id} className="review-details__review-entry">
                   <h3 className="review-details__review-heading">レビュー</h3>
 
                   {userDetails && userDetails.id === r.user_id && (
@@ -198,7 +198,7 @@ function ReviewDetails() {
                     <p className="tags-label">特徴:</p>
                     <div className="tag-list">
                       {r.tags.flat().filter(tag => tag !== "").map((tag, idx) => (
-                        <span key={idx} className="tag-detail">{tag}</span>
+                        <span key={tag} className="tag-detail">{tag}</span>
                       ))}
                     </div>
                   </div>
