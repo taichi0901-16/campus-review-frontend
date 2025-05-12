@@ -18,8 +18,6 @@ const NewReviewsPage = () => {
     setReviewDetails(reviews);
   }, [reviews]);
   
-  console.log("ユーザー", userDetails)
-  console.log("レビュー", reviewDetails)
 
 
   

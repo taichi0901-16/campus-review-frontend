@@ -95,7 +95,6 @@ const handleSubmit = async (e) => {
     } catch (err) {
       setError('登録に失敗しました。');
       setMessage('');
-      console.log(err);
     }
   };
 
@@ -140,9 +139,8 @@ const handleSubmit = async (e) => {
     setMessage(`追加成功`);
     setError('');
   } catch (err) {
-    setError(`大学の追加に失敗しました。`);
+    setError(`追加に失敗しました。`);
     setMessage('');
-    console.log("エラー" , err)
     console.error(err);
   }
   };

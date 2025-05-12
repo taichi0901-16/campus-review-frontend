@@ -57,26 +57,7 @@ function ReviewDetails() {
     fetchUserAndDept();
   }, [courseData]);
 
-  const handleDelete = async (reviewId) => {
-    const confirmed = window.confirm('本当に削除しますか？');
-    if (!confirmed) return;
 
-    try {
-      const res = await fetch(`${API_URL}/review/delete/${reviewId}`, {
-        method: 'DELETE',
-      });
-
-      if (res.ok) {
-        alert('レビューを削除しました');
-        navigate('/reviews');
-      } else {
-        alert('削除に失敗しました');
-      }
-    } catch (err) {
-      console.error('削除時エラー:', err);
-      alert('削除時にエラーが発生しました');
-    }
-  };
 
   if (!courseData) return <p>レビューが見つかりません。</p>;
 
@@ -109,35 +90,6 @@ function ReviewDetails() {
             <div key={r.review_id} className="review-details__review-entry">
               <h3 className="review-details__review-heading">レビュー</h3>
 
-              {/* {currentUser?.id === r.user_id && (
-                <div className="review-card__menu-container">
-                  <button
-                    className="review-card__menu-button"
-                    onClick={() => setShowMenuIndex(showMenuIndex === i ? null : i)}
-                  >
-                    ・・・
-                  </button>
-                  {showMenuIndex === i && (
-                    <div className="review-card__dropdown">
-                      <Link to={`/review_update/${r.review_id}`} className="review-card__dropdown-link">
-                        編集
-                      </Link>
-                      <div
-                        onClick={() => handleDelete(r.review_id)}
-                        className="review-card__dropdown-delete"
-                      >
-                        削除
-                      </div>
-                      <button
-                        onClick={() => setShowMenuIndex(null)}
-                        className="review-card__dropdown-cancel"
-                      >
-                        取消
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )} */}
 
               <div className="reviewDetail">
                 <p className="review-details__rating">面白さ: {renderStars(r.rating_overall)} {r.rating_overall}</p>

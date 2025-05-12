@@ -82,8 +82,7 @@ function Mypage({ onLogin }) {
     getFilteredReviews();
   }, [currentUser, reviewDetails]); // currentUser と reviewDetails が変わった時に実行
 
-  console.log("ユーザー", userDetails);
-  console.log("レビューたち", filteredReviews);
+ 
 
   return (
     <div className='mypage-container'>

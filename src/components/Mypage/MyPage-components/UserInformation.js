@@ -16,7 +16,6 @@ const [showModal, setShowModal] = useState(false);
 
          useEffect(() => {
               setUserDetails(currentUser);
-              console.log("ユーザー", userDetails)
           }, [currentUser]);
     
 const handleDelete = async () => {

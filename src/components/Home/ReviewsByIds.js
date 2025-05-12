@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 function ReviewsByYearOffered() {
   const location = useLocation();
   const reviews = location.state?.reviews || [];
-  console.log("HELLOOOOOO", reviews);
 
   return (
     <div>

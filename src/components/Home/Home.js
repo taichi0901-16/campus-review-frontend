@@ -33,7 +33,6 @@ const Home = ({isLoggedIn}) => {
 
         const response_review = await fetch(`${API_URL}/reviews`);
         const data_review = await response_review.json();
-        console.log("レビューレビューレスポンス", data_review);
         setReviews(data_review)
 
       } catch (error) {
@@ -48,7 +47,6 @@ const Home = ({isLoggedIn}) => {
         try {
           const response_course = await fetch(`${API_URL}/courses`);
           const data_course = await response_course.json();
-          console.log("コースレスポンス", data_course);
           setCourses(data_course)
 
         } catch (error) {
@@ -63,7 +61,6 @@ const Home = ({isLoggedIn}) => {
       try {
         const response_teacher = await fetch(`${API_URL}/teachers`);
         const data_teacher = await response_teacher.json();
-        console.log("ティーチャーレスポンス", data_teacher);
         setTeachers(data_teacher)
 
       } catch (error) {

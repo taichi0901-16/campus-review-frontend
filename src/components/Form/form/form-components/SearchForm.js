@@ -75,7 +75,6 @@ function SearchForm(){
               setMessage('登録成功！');
               setError('');
               if (res.status === 201) {
-                console.log("検索結果",res.data)
                 navigate("/search_result" , { state: { searchResults: res.data } });
 
               }
@@ -86,7 +85,6 @@ function SearchForm(){
           };
     
         const handleCheckboxChange = (name, value) => {
-          console.log(userDetails.university_id)
             const currentValue = watch(name);
             const newValue = currentValue.includes(value)
               ? currentValue.filter((item) => item !== value)

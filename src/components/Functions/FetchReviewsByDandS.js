@@ -6,7 +6,6 @@ const FetchReviewsByDandS = async (department_id,navigate) => {
         try {
           const res = await fetch(`${API_URL}/get_course_by_department/${department_id}`);
           const data = await res.json();
-          console.log(data)
           navigate("/search_result" , { state: { searchResults: data } });
   
         } catch (err) {

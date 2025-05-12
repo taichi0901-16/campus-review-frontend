@@ -33,7 +33,6 @@ function FeedBackForm({ onLogin }) {
         navigate('/');
       }
     } catch (err) {
-      console.error('送信エラー:', err);
       alert('送信に失敗しました');
     }
   };

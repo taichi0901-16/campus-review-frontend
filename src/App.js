@@ -50,7 +50,6 @@ function App() {
 
       useEffect(() => {
         const userData = Cookies.get("user_session"); // cookiesからユーザー情報を取得
-        console.log("HELLO" , userData)
         if ("userData",userData) {
           setIsLoggedIn(true);
           

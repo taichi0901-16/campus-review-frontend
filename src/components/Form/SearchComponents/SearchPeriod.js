@@ -12,7 +12,6 @@ function SearchPeriod(){
       
            useEffect(() => {
                 setUserDetails(currentUser);
-                console.log("ユーザー", userDetails)
             }, [currentUser]);
 
          

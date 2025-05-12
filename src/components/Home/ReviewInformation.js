@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import UserContext from '../../contexts/UserContext';
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import './reviewinformation.css';
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -9,8 +9,6 @@ function ReviewInformation() {
   const { currentUser } = useContext(UserContext);
   const [reviewDetails, setReviewDetails] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
-  const [showMenuIndex, setShowMenuIndex] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     setUserDetails(currentUser);
@@ -42,9 +40,7 @@ function ReviewInformation() {
 
     <div className="review-info">
       <h2 className="review-info__title">{reviewDetails.course_name}</h2>
-      {/* <p className="review-info__stat">平均評価（総合）: {reviewDetails.average_rating_overall}</p>
-      <p className="review-info__stat">平均評価（易しさ）: {reviewDetails.average_rating_easiness}</p>
-      <p className="review-info__stat">平均評価（有用性）: {reviewDetails.average_rating_usefulness}</p> */}
+     
              <div className="rating-star">
 
              <p className="rating-title"> 総合評価 : </p>

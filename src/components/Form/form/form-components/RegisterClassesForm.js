@@ -126,7 +126,6 @@ fetchFaculties()
 
     } catch (err) {
       setError('登録に失敗しました。');
-      console.log(err)
       setMessage('');
     }
   };

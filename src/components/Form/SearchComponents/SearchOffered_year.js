@@ -11,7 +11,6 @@ function SearchOffered_year() {
 
   useEffect(() => {
     setUserDetails(currentUser);
-    console.log("ユーザー", userDetails);
   }, [currentUser]);
 
   const navigate = useNavigate();

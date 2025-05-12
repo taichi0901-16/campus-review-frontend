@@ -23,7 +23,7 @@ function ReviewEditForm() {
   const [reviewDetails, setReviewDetails] = useState(null);
   const [coursesDetails, setCoursesDetails] = useState([]);
 
-  const { register, handleSubmit, watch, setValue, control, reset } = useForm({
+  const {  handleSubmit, watch, setValue, control, reset } = useForm({
     defaultValues: {}
   });
 

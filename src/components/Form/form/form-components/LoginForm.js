@@ -30,7 +30,6 @@ function LoginForm({ onLogin }) {
       });
 
       const data = await response.json();
-      console.log("サーバーからのレスポンス:", data); // ここ追加
 
       if (response.ok) {
         Cookies.set('user_session', JSON.stringify(data), { expires: 7 }); // セッション情報をクッキーに保存
@@ -41,7 +40,6 @@ function LoginForm({ onLogin }) {
         setError(data.error || 'ログインに失敗しました');
       }
     } catch (err) {
-      console.log(err);
       setError('通信エラーが発生しました');
     } finally {
       setLoading(false); // ローディング終了
