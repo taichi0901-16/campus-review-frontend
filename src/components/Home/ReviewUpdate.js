@@ -29,16 +29,16 @@ function ReviewEditForm() {
       try {
         const res = await axios.get(`${API_URL}/plane_review/${id}`);
         setReviewDetails(res.data);
-        console.log("レスポンスデータだよーーんレスポンスデータだよーーん",res.data)
+        console.log(res.data)
         const defaultValues = {
           ...res.data,
-          selected_features: res.data[7].split(","),
-          selected_class_styles: res.data[8].split(","),
-          selected_evaluation_methods: res.data[9].split(","),
-          selected_material_provisions: res.data[10].split(","),
-          selected_requirements: res.data[11].split(","),
-          selected_tags: res.data[12].split(","),
-          selected_teacher_styles: res.data[13].split(","),
+          selected_features: res.data.feature_ids.split(","),
+          selected_class_styles: res.data.class_style_ids.split(","),
+          selected_evaluation_methods: res.data.evaluation_method_ids.split(","),
+          selected_material_provisions: res.data.material_provision_ids.split(","),
+          selected_requirements: res.data.requirement_ids.split(","),
+          selected_tags: res.data.tag_ids.split(","),
+          selected_teacher_styles: res.data.teacher_style_ids.split(","),
         };
   
         reset(defaultValues); // ← これで初期チェックも含め反映される
@@ -212,7 +212,7 @@ function ReviewEditForm() {
   {features && Object.entries(features).map(([id, label]) => (
     <div
       key={id}
-      className={`checkbox-button ${(watch('selected_features') || []).includes(id) ? 'selected' : ''}`}
+      className={`checkbox-button ${watch('selected_features').includes(id) ? 'selected' : ''}`}
       onClick={() => handleCheckboxChange('selected_features', id)}
     >
       <input
@@ -230,7 +230,7 @@ function ReviewEditForm() {
           <label>授業の形式:</label><br/>
           {class_styles && Object.entries(class_styles).map(([id, label]) => (
             <div key={id}
-            className={`checkbox-button ${(watch('selected_class_styles') || []).includes(id) ? 'selected' : ''}`}
+            className={`checkbox-button ${watch('selected_class_styles').includes(id) ? 'selected' : ''}`}
             onClick={() => handleCheckboxChange('selected_class_styles', id)}>
               <input
                   type="checkbox"
@@ -247,7 +247,7 @@ function ReviewEditForm() {
           <label>評価方法:</label><br/>
           {evaluation_methods && Object.entries(evaluation_methods).map(([id, label]) => (
             <div key={id}
-            className={`checkbox-button ${(watch('selected_evaluation_methods') || [] ).includes(id) ? 'selected' : ''}`}
+            className={`checkbox-button ${watch('selected_evaluation_methods').includes(id) ? 'selected' : ''}`}
             onClick={() => handleCheckboxChange('selected_evaluation_methods', id)}>
                 <input
                   type="checkbox"
@@ -265,7 +265,7 @@ function ReviewEditForm() {
           <label>学生に求めること:</label><br/>
           {requirements && Object.entries(requirements).map(([id, label]) => (
             <div key={id}
-            className={`checkbox-button ${(watch('selected_requirements') || []).includes(id) ? 'selected' : ''}`}
+            className={`checkbox-button ${watch('selected_requirements').includes(id) ? 'selected' : ''}`}
             onClick={() => handleCheckboxChange('selected_requirements', id)}>
                 <input
                   type="checkbox"
@@ -282,7 +282,7 @@ function ReviewEditForm() {
           <label>教員の雰囲気:</label><br/>
           {teacher_style && Object.entries(teacher_style).map(([id, label]) => (
             <div key={id}
-            className={`checkbox-button ${(watch('selected_teacher_styles') || []).includes(id) ? 'selected' : ''}`}
+            className={`checkbox-button ${watch('selected_teacher_styles').includes(id) ? 'selected' : ''}`}
             onClick={() => handleCheckboxChange('selected_teacher_styles', id)}>
                 <input
                   type="checkbox"
@@ -299,7 +299,7 @@ function ReviewEditForm() {
           <label>授業資料の提供方法:</label><br/>
           {material_provision && Object.entries(material_provision).map(([id, label]) => (
             <div key={id}
-            className={`checkbox-button ${(watch('selected_material_provisions') || []).includes(id) ? 'selected' : ''}`}
+            className={`checkbox-button ${watch('selected_material_provisions').includes(id) ? 'selected' : ''}`}
             onClick={() => handleCheckboxChange('selected_material_provisions', id)}>
                 <input
                   type="checkbox"
@@ -316,7 +316,7 @@ function ReviewEditForm() {
           <label>その他特徴:</label><br/>
           {tags && Object.entries(tags).map(([id, label]) => (
             <div key={id}
-            className={`checkbox-button ${(watch('selected_tags') || [] ).includes(id) ? 'selected' : ''}`}
+            className={`checkbox-button ${watch('selected_tags').includes(id) ? 'selected' : ''}`}
             onClick={() => handleCheckboxChange('selected_tags', id)}>
                 <input
                   type="checkbox"
