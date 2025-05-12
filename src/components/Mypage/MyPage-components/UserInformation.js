@@ -75,8 +75,10 @@ console.log(response)
           />
           <br />
           
-        <button className="delete-btn" onClick={handleDelete}>削除実行</button>
-<button className="modal-cancel-btn" onClick={() => setShowModal(false)}>キャンセル</button>
+<div className="modal-button-group">
+  <button className="delete-btn" onClick={handleDelete}>削除実行</button>
+  <button className="modal-cancel-btn" onClick={() => setShowModal(false)}>キャンセル</button>
+</div>
 
         </div>
       </div>
