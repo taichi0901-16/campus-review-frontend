@@ -59,7 +59,10 @@ function ReviewInformation() {
       <h3 className="review-info__subtitle">レビュー</h3>
       
       
-      {reviewDetails.reviews.map((review, index) => (
+      {reviewDetails.reviews
+      .slice() // 元の配列を破壊しないためのコピー
+      .reverse()
+      .map((review, index) => (
   <Link 
     to={`/review_details/${review.review_id}`} 
     key={review.review_id} 

@@ -15,7 +15,10 @@ function SearchResult() {
     <SearchBar />
   </div>
       {Array.isArray(searchResults) && searchResults.length > 0 ? (
-        searchResults.map((course, index) => {
+        searchResults
+        .slice() // 元の配列を破壊しないためのコピー
+        .reverse()
+        .map((course, index) => {
           const reviews = course.reviews || [];
           const latestReview = reviews.length > 0 ? reviews[reviews.length - 1] : null;
 
