@@ -131,7 +131,8 @@ fetchFaculties()
       navigate('/post');
 
     } catch (err) {
-      setError('登録に失敗しました。');
+            setFormError('登録に失敗しました。');
+
       setFormMessage('');
 
     }
