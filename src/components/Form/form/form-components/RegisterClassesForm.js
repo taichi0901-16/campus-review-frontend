@@ -11,8 +11,7 @@ function RegisterClassesForm(){
   const { currentUser } = useContext(UserContext);
   const [faculties, setFaculties] = useState([]);
   const [departments, setDepartments] = useState([]);
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
+
   const [isAddNewFaculty, setIsAddNewFaculty] = useState(false);
   const [isAddNewDepartment, setIsAddNewDepartment] = useState(false);
   const [isAddNewTeacher, setIsAddNewTeacher] = useState(false);
@@ -21,7 +20,12 @@ function RegisterClassesForm(){
   const [teaName, setTeaName] = useState('');
   const [userDetails, setUserDetails] = useState(null); 
   const [teachers, setTeachers] = useState([]);
+  const [formError, setFormError] = useState('');
+  const [formMessage, setFormMessage] = useState('');
 
+// 大学・学部・学科追加用
+const [addError, setAddError] = useState('');
+const [addMessage, setAddMessage] = useState('');
   
   useEffect(() => {
     if (!currentUser) return;
@@ -107,8 +111,10 @@ fetchFaculties()
     e.preventDefault();
     try {
       const res = await axios.post(`${API_URL}/registerclasses`, formData);
-      setMessage('登録成功！');
-      setError('');
+    setFormMessage('登録成功！');
+    setFormError('');
+    setAddMessage('');
+    setAddError('');
       setFormData({
         name: '',
         university_id:1,
@@ -126,7 +132,8 @@ fetchFaculties()
 
     } catch (err) {
       setError('登録に失敗しました。');
-      setMessage('');
+      setFormMessage('');
+
     }
   };
 
@@ -152,7 +159,7 @@ fetchFaculties()
       payload.university_id = userDetails.university_id;
     } else if (type === 'departments') {
       if (!formData.faculty_id) {
-        setError('学部を選択してください。');
+      setAddError('学部を選択してください。');
         return;
       }
       payload.faculty_id = formData.faculty_id;
@@ -165,18 +172,27 @@ fetchFaculties()
     const res = await axios.post(`${API_URL}/register/${type}`, payload);
     if (type === 'faculties') {
       setFaculties([...faculties, res.data]);
+      setFormData({ ...formData, faculty_id: res.data.id });
+      setFactName('');
     } else if (type === 'departments') {
       setDepartments([...departments, res.data]);
+      setFormData({ ...formData, department_id: res.data.id });
+      setDepName('');
     } else if(type === 'teachers'){
-      const teacherRes = await axios.get(`${API_URL}/teachers`);
-      setTeachers(teacherRes.data);
+      setTeachers([...teachers, res.data]);
+      setFormData({ ...formData, teacher_id: res.data.id });
+      setTeaName('');
     }
-    setMessage(`追加成功！`);
-    setError('');
+    setAddMessage('追加成功');
+    setAddError('');
   } catch (err) {
-    setError(`追加に失敗しました。`);
-    setMessage('');
-    console.error(err);
+    if (err.response && err.response.status === 409) {
+      setAddError(err.response.data.message);
+    } else {
+      setAddError('追加に失敗しました。');
+      console.error(err);
+    }
+    setAddMessage('');
   }
   };
 
@@ -228,10 +244,14 @@ fetchFaculties()
             <div>
                <input
         type="text"
-        placeholder="新しい学部学部名"
+        placeholder="新しい学部名"
         value={factName}
         onChange={(e) => setFactName(e.target.value)}
       />
+
+         {addError && <p style={{ color: 'red' }}>{addError}</p>}
+            {addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
       <button className="button-btn" type="button" onClick={() => handleAddNewItem('faculties', factName)}>
         追加
       </button>
@@ -268,6 +288,11 @@ fetchFaculties()
         value={depName}
         onChange={(e) => setDepName(e.target.value)}
       />
+
+
+         {addError && <p style={{ color: 'red' }}>{addError}</p>}
+            {addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
       <button className="button-btn" type="button" onClick={() => handleAddNewItem('departments', depName)}>
         追加
       </button>
@@ -308,6 +333,11 @@ fetchFaculties()
         value={teaName}
         onChange={(e) => setTeaName(e.target.value)}
       />
+
+         {addError && <p style={{ color: 'red' }}>{addError}</p>}
+            {addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
+
       <button className="button-btn" type="button" onClick={() => handleAddNewItem('teachers', teaName)}>
         追加
       </button>

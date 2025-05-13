@@ -20,8 +20,6 @@ function RegisterForm() {
   const [universities, setUniversities] = useState([]);
   const [faculties, setFaculties] = useState([]);
   const [departments, setDepartments] = useState([]);
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
   const [isAddNewUniversity, setIsAddNewUniversity] = useState(false);
   const [isAddNewFaculty, setIsAddNewFaculty] = useState(false);
   const [isAddNewDepartment, setIsAddNewDepartment] = useState(false);
