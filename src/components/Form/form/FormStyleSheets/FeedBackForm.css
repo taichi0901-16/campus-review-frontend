@@ -40,7 +40,7 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-button{
+.feedback-button{
     background-color: #364e8b;
     border: none;
     border-radius: 10px;
@@ -52,6 +52,6 @@ button{
     width: 100%;
 }
 
-button:hover {
+.feedback-button:hover {
   background-color: #2563eb;
 }
