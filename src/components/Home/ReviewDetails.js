@@ -90,7 +90,33 @@ function ReviewDetails() {
             <div key={r.review_id} className="review-details__review-entry">
               <h3 className="review-details__review-heading">レビュー</h3>
 
-
+              {currentUser?.id === r.user_id && (
+                <div className="review-card__menu-container">
+                  <button
+                    className="review-card__menu-button"
+                    onClick={() => setShowMenuIndex(showMenuIndex === i ? null : i)}
+                  >
+                    ・・・
+                  </button>
+                  {showMenuIndex === i && (
+                    <div className="review-card__dropdown">
+                     
+                      <div
+                        onClick={() => handleDelete(r.review_id)}
+                        className="review-card__dropdown-delete"
+                      >
+                        削除
+                      </div>
+                      <button
+                        onClick={() => setShowMenuIndex(null)}
+                        className="review-card__dropdown-cancel"
+                      >
+                        取消
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
               <div className="reviewDetail">
                 <p className="review-details__rating">面白さ: {renderStars(r.rating_overall)} {r.rating_overall}</p>
                 <p className="review-details__rating">難易度: {renderStars(r.rating_easiness)} {r.rating_easiness}</p>
