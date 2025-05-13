@@ -1,6 +1,19 @@
 import '../StyleSheets/SearchOffered_year.css';  // CSSファイルをインポート
 
 function YearSelector({ value, onChange }) {
+  // 表示と内部値のマッピング
+  const yearLabels = {
+    1: '1年',
+    2: '2年',
+    3: '3年',
+    4: '4年',
+    5: 'M1',
+    6: 'M2',
+    7: 'D1',
+    8: 'D2',
+    9: 'D3',
+  };
+
   return (
     <div className="year-selector-container">
       {/* 開講年から探すのヘッダー */}
@@ -10,13 +23,13 @@ function YearSelector({ value, onChange }) {
 
       {/* 年選択のオプション */}
       <div className="year-options">
-        {[1, 2, 3, 4].map((year) => (
+        {Object.entries(yearLabels).map(([yearValue, label]) => (
           <div
-            key={year}
-            className={`year-option ${String(value) === String(year) ? 'selected' : ''}`}
-            onClick={() => onChange({ target: { value: year } })}
+            key={yearValue}
+            className={`year-option ${String(value) === yearValue ? 'selected' : ''}`}
+            onClick={() => onChange({ target: { value: Number(yearValue) } })}
           >
-            <span>{year}年</span>
+            <span>{label}</span>
           </div>
         ))}
       </div>
