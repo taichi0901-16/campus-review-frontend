@@ -57,7 +57,26 @@ function ReviewDetails() {
     fetchUserAndDept();
   }, [courseData]);
 
+  const handleDelete = async (reviewId) => {
+    const confirmed = window.confirm('本当に削除しますか？');
+    if (!confirmed) return;
 
+    try {
+      const res = await fetch(`${API_URL}/review/delete/${reviewId}`, {
+        method: 'DELETE',
+      });
+
+      if (res.ok) {
+        alert('レビューを削除しました');
+        navigate('/reviews');
+      } else {
+        alert('削除に失敗しました');
+      }
+    } catch (err) {
+      console.error('削除時エラー:', err);
+      alert('削除時にエラーが発生しました');
+    }
+  };
 
   if (!courseData) return <p>レビューが見つかりません。</p>;
 
