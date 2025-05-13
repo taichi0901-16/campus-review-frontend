@@ -39,7 +39,10 @@ const NewReviewsPage = () => {
         {Array.isArray(reviewDetails) && reviewDetails.length > 0 ? (
           <div className="scroll-wrapper">
             {reviewDetails
-            .filter(course => course.course_university_id === userDetails.university_id).map((course) => {
+            .filter(course => course.course_university_id === userDetails.university_id)
+            .slice() // 元の配列を破壊しないためのコピー
+            .reverse() // 逆順にする
+            .map((course) => {
               const reviews = course.reviews || [];
               const latestReview = reviews.length > 0 ? reviews[reviews.length - 1] : null;
 

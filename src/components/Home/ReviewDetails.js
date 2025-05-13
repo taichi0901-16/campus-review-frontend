@@ -68,7 +68,7 @@ function ReviewDetails() {
 
       if (res.ok) {
         alert('レビューを削除しました');
-        navigate('/reviews');
+        navigate('/');
       } else {
         alert('削除に失敗しました');
       }
