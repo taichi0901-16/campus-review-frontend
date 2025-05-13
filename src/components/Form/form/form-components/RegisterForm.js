@@ -204,8 +204,6 @@ const handleAddNewItem = async (type, value) => {
         />
       </div>
   
-{addError && <p style={{ color: 'red' }}>{addError}</p>}
-{addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
 
       <div className="form-group">
         <label>大学名: </label>
@@ -229,6 +227,11 @@ const handleAddNewItem = async (type, value) => {
               value={univName}
               onChange={(e) => setUnivName(e.target.value)}
             />
+
+            {addError && <p style={{ color: 'red' }}>{addError}</p>}
+            {addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
+
             <button type="button" onClick={() => handleAddNewItem('universities', univName)}>
               追加
             </button>
@@ -269,6 +272,12 @@ const handleAddNewItem = async (type, value) => {
               value={factName}
               onChange={(e) => setFactName(e.target.value)}
             />
+
+
+
+            {addError && <p style={{ color: 'red' }}>{addError}</p>}
+            {addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
             <button type="button" onClick={() => handleAddNewItem('faculties', factName)}>
               追加
             </button>
@@ -309,6 +318,10 @@ const handleAddNewItem = async (type, value) => {
               value={depName}
               onChange={(e) => setDepName(e.target.value)}
             />
+
+            {addError && <p style={{ color: 'red' }}>{addError}</p>}
+            {addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
             <button type="button" onClick={() => handleAddNewItem('departments', depName)}>
               追加
             </button>
