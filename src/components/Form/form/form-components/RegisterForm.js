@@ -131,17 +131,29 @@ const handleSubmit = async (e) => {
     const res = await axios.post(`${API_URL}/register/${type}`, payload);
     if (type === 'universities') {
       setUniversities([...universities, res.data]);
+      setFormData({ ...formData, university_id: res.data.id });
+      setUnivName('');
+
     } else if (type === 'faculties') {
       setFaculties([...faculties, res.data]);
+      setFormData({ ...formData, faculty_id: res.data.id });
+      setFactName('');
     } else if (type === 'departments') {
       setDepartments([...departments, res.data]);
+      setFormData({ ...formData, department_id: res.data.id });
+      setDepName('');
+
     }
     setMessage(`追加成功`);
     setError('');
   } catch (err) {
-    setError(`追加に失敗しました。`);
+    if (err.response && err.response.status === 409) {
+      setError(err.response.data.message);  // ← 重複チェックメッセージ表示
+    } else {
+      setError(`追加に失敗しました。`);
+      console.error(err);
+    }
     setMessage('');
-    console.error(err);
   }
   };
   return (
@@ -250,7 +262,7 @@ const handleSubmit = async (e) => {
             <button
       type="button"
       className="close-button"
-      onClick={() => setIsAddNewUniversity(false)}
+      onClick={() =>setIsAddNewFaculty(false)}
     >
       閉じる
     </button>
@@ -287,7 +299,7 @@ const handleSubmit = async (e) => {
             <button
       type="button"
       className="close-button"
-      onClick={() => setIsAddNewUniversity(false)}
+      onClick={() => setIsAddNewDepartment(false)}
     >
       閉じる
     </button>
