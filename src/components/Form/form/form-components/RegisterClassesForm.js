@@ -181,6 +181,8 @@ fetchFaculties()
       setDepName('');
     } else if(type === 'teachers'){
          const teacherRes = await axios.get(`${API_URL}/teachers`);
+           setFormData({ ...formData, teacher_id: res.data.id });
+
       setTeachers(teacherRes.data);
             setTeaName('');
     }
