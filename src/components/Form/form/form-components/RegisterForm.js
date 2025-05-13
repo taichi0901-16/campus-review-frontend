@@ -197,6 +197,9 @@ const handleSubmit = async (e) => {
         />
       </div>
   
+  {error && <p style={{ color: 'red' }}>{error}</p>}
+    {message && <p style={{ color: 'green' }}>{message}</p>}
+
       <div className="form-group">
         <label>大学名: </label>
         <select
@@ -232,6 +235,9 @@ const handleSubmit = async (e) => {
           </div>
         )}
       </div>
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    {message && <p style={{ color: 'green' }}>{message}</p>}
   
       <div className="form-group">
         <label>学部名: </label>
@@ -269,6 +275,9 @@ const handleSubmit = async (e) => {
           </div>
         )}
       </div>
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    {message && <p style={{ color: 'green' }}>{message}</p>}
   
       <div className="form-group">
         <label>学科名: </label>
