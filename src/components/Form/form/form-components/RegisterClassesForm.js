@@ -180,9 +180,9 @@ fetchFaculties()
       setFormData({ ...formData, department_id: res.data.id });
       setDepName('');
     } else if(type === 'teachers'){
-      setTeachers([...teachers, res.data]);
-      setFormData({ ...formData, teacher_id: res.data.id });
-      setTeaName('');
+         const teacherRes = await axios.get(`${API_URL}/teachers`);
+      setTeachers(teacherRes.data);
+            setTeaName('');
     }
     setAddMessage('追加成功');
     setAddError('');
