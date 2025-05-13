@@ -246,8 +246,6 @@ const handleAddNewItem = async (type, value) => {
         )}
       </div>
 
-{addError && <p style={{ color: 'red' }}>{addError}</p>}
-{addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
 
       <div className="form-group">
         <label>学部名: </label>
@@ -292,8 +290,6 @@ const handleAddNewItem = async (type, value) => {
         )}
       </div>
 
-{addError && <p style={{ color: 'red' }}>{addError}</p>}
-{addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
 
       <div className="form-group">
         <label>学科名: </label>
