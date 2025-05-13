@@ -126,12 +126,12 @@ function ReviewDetails() {
                       >
                         削除
                       </div>
-                      <button
+                      <div
                         onClick={() => setShowMenuIndex(null)}
                         className="review-card__dropdown-cancel"
                       >
                         取消
-                      </button>
+                      </div>
                     </div>
                   )}
                 </div>
