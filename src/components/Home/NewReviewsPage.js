@@ -34,7 +34,7 @@ const NewReviewsPage = () => {
 
   return (
     <div className="reviews">
-      <h2 className="new-reviews-subject">今週の新着レビュー</h2>
+      <h2 className="new-reviews-subject">新着レビュー</h2>
       <div className="search-results-container">
         {Array.isArray(reviewDetails) && reviewDetails.length > 0 ? (
           <div className="scroll-wrapper">

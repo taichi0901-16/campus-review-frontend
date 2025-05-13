@@ -23,7 +23,7 @@ function FooterNav({ isLoggedIn, onLogout }) {
         <div className="line3"></div>
       </div>
       <ul className={`nav-links ${isActive ? "nav-active" : ""}`}>
-        {["ホーム", "マイページ", "口コミを投稿", "フォーム" , isLoggedIn ? "ログアウト" : "ログイン"].map(
+        {["ホーム", "マイページ", "口コミを検索" , "口コミを投稿", "フォーム" , isLoggedIn ? "ログアウト" : "ログイン"].map(
           (text, index) => (
             <li
               key={index}
@@ -48,6 +48,8 @@ function FooterNav({ isLoggedIn, onLogout }) {
                       ? "/"
                       : text === "マイページ"
                       ? "/mypage"
+                      : text === "口コミを検索"
+                      ? "/search"
                       : text === "口コミを投稿"
                       ? "/post"
                       : text === "フォーム"
