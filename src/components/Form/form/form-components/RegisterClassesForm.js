@@ -210,9 +210,7 @@ fetchFaculties()
         <div className="register-classform-container">
    <h2 className="register-new-subject">授業を新規登録</h2>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {message && <p style={{ color: 'green' }}>{message}</p>}
-      <form onSubmit={handleSubmit}>
+           <form onSubmit={handleSubmit}>
 
         <div className="subject-name-container">
           <label className="label-name">科目名: </label>
@@ -454,7 +452,9 @@ fetchFaculties()
         </div>
 
 
-      
+      {formError && <p style={{ color: 'red' }}>{formError}</p>}
+{formMessage && <p style={{ color: 'green' }}>{formMessage}</p>}
+
 
         <button className="button-btn register" type="submit">登録</button>
       </form>
