@@ -29,6 +29,13 @@ function RegisterForm() {
   const [factName, setFactName] = useState('');
   const [depName, setDepName] = useState('');
 
+  const [formError, setFormError] = useState('');
+  const [formMessage, setFormMessage] = useState('');
+
+// 大学・学部・学科追加用
+const [addError, setAddError] = useState('');
+const [addMessage, setAddMessage] = useState('');
+
   useEffect(() => {
     // 大学リストの取得
     axios.get(`${API_URL}/universities`)
@@ -79,8 +86,10 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(`${API_URL}/register`, formData);
-      setMessage('登録成功！');
-      setError('');
+    setFormMessage('登録成功！');
+    setFormError('');
+    setAddMessage('');
+    setAddError('');
       setFormData({
         username: '',
         email: '',
@@ -93,8 +102,8 @@ const handleSubmit = async (e) => {
       navigate('/login');
 
     } catch (err) {
-      setError('登録に失敗しました。');
-      setMessage('');
+      setFormError('登録に失敗しました。');
+    setFormMessage('');
     }
   };
 
@@ -110,18 +119,18 @@ const handleSubmit = async (e) => {
     setIsAddNewDepartment(true);
   };
 
-  const handleAddNewItem = async (type, value) => {
-    let payload = { name: value };
+const handleAddNewItem = async (type, value) => {
+  let payload = { name: value };
 
   if (type === 'faculties') {
     if (!formData.university_id) {
-      setError('大学を選択してください。');
+      setAddError('大学を選択してください。');
       return;
     }
     payload.university_id = formData.university_id;
   } else if (type === 'departments') {
     if (!formData.faculty_id) {
-      setError('学部を選択してください。');
+      setAddError('学部を選択してください。');
       return;
     }
     payload.faculty_id = formData.faculty_id;
@@ -129,11 +138,11 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await axios.post(`${API_URL}/register/${type}`, payload);
+
     if (type === 'universities') {
       setUniversities([...universities, res.data]);
       setFormData({ ...formData, university_id: res.data.id });
       setUnivName('');
-
     } else if (type === 'faculties') {
       setFaculties([...faculties, res.data]);
       setFormData({ ...formData, faculty_id: res.data.id });
@@ -142,27 +151,25 @@ const handleSubmit = async (e) => {
       setDepartments([...departments, res.data]);
       setFormData({ ...formData, department_id: res.data.id });
       setDepName('');
-
     }
-    setMessage(`追加成功`);
-    setError('');
+
+    setAddMessage('追加成功');
+    setAddError('');
   } catch (err) {
     if (err.response && err.response.status === 409) {
-      setError(err.response.data.message);  // ← 重複チェックメッセージ表示
+      setAddError(err.response.data.message);
     } else {
-      setError(`追加に失敗しました。`);
+      setAddError('追加に失敗しました。');
       console.error(err);
     }
-    setMessage('');
+    setAddMessage('');
   }
-  };
+};
+
   return (
     <div className="register-container">
     <h2>新規会員登録</h2>
-  
-    {error && <p style={{ color: 'red' }}>{error}</p>}
-    {message && <p style={{ color: 'green' }}>{message}</p>}
-  
+
     <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label>ユーザー名: </label>
@@ -197,8 +204,8 @@ const handleSubmit = async (e) => {
         />
       </div>
   
-  {error && <p style={{ color: 'red' }}>{error}</p>}
-    {message && <p style={{ color: 'green' }}>{message}</p>}
+{addError && <p style={{ color: 'red' }}>{addError}</p>}
+{addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
 
       <div className="form-group">
         <label>大学名: </label>
@@ -236,9 +243,9 @@ const handleSubmit = async (e) => {
         )}
       </div>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    {message && <p style={{ color: 'green' }}>{message}</p>}
-  
+{addError && <p style={{ color: 'red' }}>{addError}</p>}
+{addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
       <div className="form-group">
         <label>学部名: </label>
         <select
@@ -276,9 +283,9 @@ const handleSubmit = async (e) => {
         )}
       </div>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    {message && <p style={{ color: 'green' }}>{message}</p>}
-  
+{addError && <p style={{ color: 'red' }}>{addError}</p>}
+{addMessage && <p style={{ color: 'green' }}>{addMessage}</p>}
+
       <div className="form-group">
         <label>学科名: </label>
         <select
@@ -337,6 +344,8 @@ const handleSubmit = async (e) => {
 
   </select>
 </div>
+{formError && <p style={{ color: 'red' }}>{formError}</p>}
+{formMessage && <p style={{ color: 'green' }}>{formMessage}</p>}
 
   
       <button className="register-button" type="submit">登録</button>
