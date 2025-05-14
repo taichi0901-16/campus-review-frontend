@@ -33,13 +33,19 @@ function RegisterForm() {
 // 大学・学部・学科追加用
 const [addError, setAddError] = useState('');
 const [addMessage, setAddMessage] = useState('');
+const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // 大学リストの取得
-    axios.get(`${API_URL}/universities`)
-      .then(res => setUniversities(res.data))
-      .catch(err => console.log(err));
-  }, []);
+useEffect(() => {
+  axios.get(`${API_URL}/universities`)
+    .then(res => {
+      setUniversities(res.data);
+      setIsLoading(false); // 読み込み完了
+    })
+    .catch(err => {
+      console.log(err);
+      setIsLoading(false); // エラーでも一応画面を表示
+    });
+}, []);
 
 
   const handleChange = (e) => {
@@ -163,6 +169,19 @@ const handleAddNewItem = async (type, value) => {
     setAddMessage('');
   }
 };
+
+if (isLoading) {
+  return (
+      <div className="register-container">
+      <div className="spinner"></div>
+
+        <p>学校情報を読み込み中...</p>
+        
+        </div>
+
+  );
+}
+
 
   return (
     <div className="register-container">

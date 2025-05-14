@@ -36,7 +36,7 @@ const Home = ({isLoggedIn}) => {
         setReviews(data_review)
 
       } catch (error) {
-        console.error("授業情報の取得に失敗しました", error);
+        console.error("レビュー情報の取得に失敗しました", error);
       }
   };
     
@@ -64,7 +64,7 @@ const Home = ({isLoggedIn}) => {
         setTeachers(data_teacher)
 
       } catch (error) {
-        console.error("授業情報の取得に失敗しました", error);
+        console.error("教員情報の取得に失敗しました", error);
       }
   };
 
