@@ -46,8 +46,16 @@ function LoginForm({ onLogin }) {
     }
   };
 
+  
   return (
     <div className="login-container">
+      {loading && (
+  <div className="loading-spinner">
+    <div className="spinner"></div>
+    <p>ログイン中...</p>
+  </div>
+)}
+
       <form onSubmit={handleSubmit}>
         <div className="login-form">
           <h2>ログイン</h2>
