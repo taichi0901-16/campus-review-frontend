@@ -14,6 +14,7 @@ function Mypage({ onLogin }) {
   const { reviews } = useContext(ReviewsContext); // setReviewsは不要
   const [reviewDetails, setReviewDetails] = useState(null); // 追加
   const [filteredReviews, setFilteredReviews] = useState([]);
+const [loading, setLoading] = useState(true);
 
   // ユーザー情報を設定
   useEffect(() => {
@@ -25,9 +26,14 @@ function Mypage({ onLogin }) {
           setUserInfo(res.data);
         } catch (err) {
           console.error(err);
-        }
+        } finally {
+        setLoading(false); // 読み込み完了
       }
-    };
+    } else {
+      setLoading(false); // ログインしていない場合もローディング終了
+    }
+      };
+    
     getUniversity();
   }, [currentUser]);
 
@@ -82,7 +88,15 @@ function Mypage({ onLogin }) {
     getFilteredReviews();
   }, [currentUser, reviewDetails]); // currentUser と reviewDetails が変わった時に実行
 
- 
+ if (loading) {
+  return (
+    <div className="overlay">
+      <div className="spinner"></div>
+      <p>読み込み中...</p>
+    </div>
+  );
+}
+
 
   return (
     <div className='mypage-container'>
