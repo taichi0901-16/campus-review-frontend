@@ -24,55 +24,45 @@ const Home = ({isLoggedIn}) => {
     const { courses, setCourses } = useContext(CoursesContext); // ← ここ重要
     const { reviews, setReviews } = useContext(ReviewsContext); // ← ここ重要
     const { teachers, setTeachers } = useContext(TeachersContext); // ← ここ重要
+const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
+  const fetchAllData = async () => {
+    try {
+      const [response_review, response_course, response_teacher] = await Promise.all([
+        fetch(`${API_URL}/reviews`),
+        fetch(`${API_URL}/courses`),
+        fetch(`${API_URL}/teachers`)
+      ]);
 
-    const fetchReviews = async () => {
+      const [data_review, data_course, data_teacher] = await Promise.all([
+        response_review.json(),
+        response_course.json(),
+        response_teacher.json()
+      ]);
 
-      try {
-
-        const response_review = await fetch(`${API_URL}/reviews`);
-        const data_review = await response_review.json();
-        setReviews(data_review)
-
-      } catch (error) {
-        console.error("レビュー情報の取得に失敗しました", error);
-      }
-  };
-    
-    fetchReviews()
-
-    const fetchCourses = async () => {
-
-        try {
-          const response_course = await fetch(`${API_URL}/courses`);
-          const data_course = await response_course.json();
-          setCourses(data_course)
-
-        } catch (error) {
-          console.error("授業情報の取得に失敗しました", error);
-        }
-    };
-
-    fetchCourses();
-
-    const fetchTeachers = async () => {
-
-      try {
-        const response_teacher = await fetch(`${API_URL}/teachers`);
-        const data_teacher = await response_teacher.json();
-        setTeachers(data_teacher)
-
-      } catch (error) {
-        console.error("教員情報の取得に失敗しました", error);
-      }
+      setReviews(data_review);
+      setCourses(data_course);
+      setTeachers(data_teacher);
+    } catch (error) {
+      console.error("データの取得に失敗しました", error);
+    } finally {
+      setLoading(false); // 全データ取得後にローディング終了
+    }
   };
 
-  fetchTeachers();
-  
-  }, []);
+  fetchAllData();
+}, []);
 
 
+if (loading) {
+  return (
+    <div className="overlay">
+      <div className="spinner"></div>
+      <p>読み込み中...</p>
+    </div>
+  );
+}
 
   return (
 <div id="container">
