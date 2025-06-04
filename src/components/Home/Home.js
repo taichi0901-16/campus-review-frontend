@@ -29,6 +29,7 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
   const fetchAllData = async () => {
     if (!isLoggedIn) {
+      setLoading(false);
       return; // ログインしていない場合、データ取得をスキップ
     }
 
