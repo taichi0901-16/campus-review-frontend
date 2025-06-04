@@ -28,6 +28,10 @@ const [loading, setLoading] = useState(true);
 
 useEffect(() => {
   const fetchAllData = async () => {
+    if (!isLoggedIn) {
+      return; // ログインしていない場合、データ取得をスキップ
+    }
+
     try {
       const [response_review, response_course, response_teacher] = await Promise.all([
         fetch(`${API_URL}/reviews`),
@@ -52,7 +56,7 @@ useEffect(() => {
   };
 
   fetchAllData();
-}, []);
+}, [isLoggedIn]); // isLoggedInが変更されるたびに再実行
 
 
 if (loading) {
